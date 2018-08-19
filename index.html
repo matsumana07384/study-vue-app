@@ -2,21 +2,40 @@
 <html lang="ja">
 
 <head>
-  <meta charset="utf-8">
-  <title>study vue.js app</title>
-  <link href="main.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>My Vue App</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+
   <div id="app">
-    <!-- ここと連携 -->
-    <p>{{ message }}</p>
-    <input v-model="message"></input> 
+    <hr>
+    <h1>テキストバインディング</h1>
+    <p>Hello {{ message }}!</p>
+    <hr>
+    <h1>繰り返しの描画</h1>
+    <ol>
+      <li v-for="item in list">{{item}}</li>
+    </ol>
+    <hr>
+    <h1>イベントの利用</h1>
     <button v-on:click="handleClick">Click</button>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-  <script scr="main.js"></script>
-  </div>
+    <hr>
+    <h1>フォーム入力との同期</h1>
+    <input v-model="message">
+    <hr>
+    <h1>条件分岐</h1>
+    <p v-if="show">Hello Vue.js</p>
+    <hr>
+    <h1>トランジション＆アニメーション</h1>
+    <p v-if="show">はろー｡･*･:≡(　ε:)</p>
+    <button v-on:click="show=!show">切り替え</button>
+    <hr>
+   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="javascript/main.js"></script>
 </body>
 
 </html>
