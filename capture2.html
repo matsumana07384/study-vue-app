@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2章</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+        <div id="app">
+        <hr>
+        <h1>テキストバインディング</h1>
+        <h1>リスト表示をいろいろと使ってみる</h1> 
+            <!-- {{}}　Mustache -->
+            <p>{{ message.value }}!</p>
+            <p>{{message.value.length}}</p>
+            <p>{{list[2]}}</p>
+            <p>{{ list[num] }}</p>
+        <hr>
+        <h1>式と文の違い</h1>
+            <p>{{1+1}}</p>
+            <!-- <p>{{var foo = message}}</p> -->
+            <p>{{message.value.length >= 10 ? '10文字いじょう':'10文字みまん'}}</p>
+            <p>そのまま：{{pi}}</p>
+            <p>小数点を丸める：{{Math.round(pi)}}</p>
+        <hr>
+        <h1>属性へのバンドル</h1>
+        <input type="text" v-bind:value="inputdata">
+        <hr>
+        <h1>データの更新</h1>
+        <p>{{count}}回クリックしたよ！！</p>
+        <button v-on:click="increment">カウントを増やす</button>
+        <hr>
+        <h1>SVGへのバンドル</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <!-- <svg xmlns="img/beer.svg" version="1.1"> -->
+            <circle cx="100" cy="75" v-bind:r="radius" fill="lightpink" />
+        </svg>
+        <input type="range" min="0" max="100" v-model="radius">
+    </div>
+
+</div>
+
+    <div>
+        <a href="index.html">前に戻る</a>
+        <a href="">次回</a>
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="javascript/vue.js"></script>
+    <script src="javascript/capture2.js"></script>
+</body>
+
+</html>
